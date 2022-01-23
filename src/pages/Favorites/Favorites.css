@@ -1,0 +1,14 @@
+.favorites {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  min-height: 450px;
+  background-color: #242529;
+  padding: 30px 10px 10px 10px;
+}
+
+@media ( max-width: 579px) {
+  .favorites {
+    justify-content: center;
+  }
+}

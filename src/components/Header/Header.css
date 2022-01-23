@@ -1,0 +1,30 @@
+.header {
+  padding: 0 20px;
+}
+
+.header__content {
+  display: flex;
+  /* align-items: center; */
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 16px 0 16px 0;
+  font-size: 32px;
+}
+
+.header__logo {
+  text-decoration: none;
+  color: olivedrab;
+}
+
+.header__search {
+  padding: 8px;
+  border: 2px solid #1a191f;
+  border-radius: 5px;
+  outline: none;
+}
+
+@media ( max-width: 371px) {
+  .header__content {
+    justify-content: center;
+  }
+}

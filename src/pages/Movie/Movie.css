@@ -1,0 +1,54 @@
+.movie-page {
+  background-color: #242529;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.movie-page__title {
+  font-size: 32px;
+  font-weight: 600;
+  color: #ffd80e;
+}
+
+.color1 {
+  color: #acacac;
+}
+
+.movie-page__content {
+  padding-top: 30px;
+  font-size: 24px;
+  padding-bottom: 20px;
+}
+
+.movie-page__genre {
+  max-width: 386px;
+}
+
+.movie__image-left {
+  display: none;
+}
+
+@media(max-width: 666px) {
+  .movie-page__left-block {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .movie-page__title {
+    text-align: center;
+    padding-bottom: 20px;
+    font-size: 24px;
+  }
+
+  .movie-page__right {
+    display: none;
+  }
+
+  .movie__image-left {
+    display: block;
+  }
+}
