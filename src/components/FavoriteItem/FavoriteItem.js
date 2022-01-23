@@ -31,8 +31,8 @@ export const FavoriteItem = ({ item }) => {
       onClick={onClickFavorite}
       src={
         isItemsInFavorite
-          ? '/image/liked1.svg'
-          : '/image/unliked1.svg'
+          ? './image/liked1.svg'
+          : './image/unliked1.svg'
       }
       alt="Unliked"
     />
