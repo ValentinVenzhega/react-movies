@@ -4,9 +4,8 @@ import { Routes, Route } from 'react-router-dom';
 import { Home } from './pages/Home';
 import { Favorites } from './pages/Favorites';
 import { Movie } from './pages/Movie';
-
 import { Header } from './components/Header';
-import { Footer } from './components/Footer/index.js';
+import { Footer } from './components/Footer';
 
 import './App.css';
 
@@ -17,7 +16,7 @@ function App() {
       <Routes>
         <Route
           strict
-          path="/react-movies/"
+          path="/react-movies"
           element={<Home />}
         />
         <Route
@@ -27,7 +26,7 @@ function App() {
         />
         <Route
           strict
-          path="/react-movies/favorites/"
+          path="/react-movies/favorites"
           element={<Favorites />}
         />
       </Routes>

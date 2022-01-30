@@ -5,9 +5,7 @@ import './Footer.css';
 export const Footer = () => {
   return (
     <div className="footer">
-      <div>
-        Copyright © 2020 . React Movies All rights reserved
-      </div>
+      <div>© React Movies, 2022</div>
     </div>
   );
 };

@@ -31,10 +31,10 @@ export const FavoriteItem = ({ item }) => {
       onClick={onClickFavorite}
       src={
         isItemsInFavorite
-          ? './image/liked1.svg'
-          : './image/unliked1.svg'
+          ? './image/liked.svg'
+          : './image/unliked.svg'
       }
-      alt="Unliked"
+      alt="liked"
     />
   );
 };

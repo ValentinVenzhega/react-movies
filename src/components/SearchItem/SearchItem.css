@@ -34,12 +34,17 @@
 }
 
 @media ( max-width: 499px) {
+  .search-title {
+    font-size: 24px;
+  }
+}
+
+@media ( max-width: 449px) {
   .search {
     justify-content: center;
   }
-
+  
   .search-block {
     margin-top: 20px;
   }
 }
-

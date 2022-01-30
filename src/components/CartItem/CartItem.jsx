@@ -1,17 +1,20 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-
 import { setItemCart } from '../../redux/cart/cartSlice';
+
 import { FavoriteItem } from '../FavoriteItem';
 
 import './CartItem.css';
 
 export const CartItem = ({ item }) => {
-  const rating = parseFloat(item.rating);
-
   const navigate = useNavigate();
   const dispatch = useDispatch();
+
+  const rating =
+    item.rating === null
+      ? item.ratig
+      : parseFloat(item.rating);
 
   const handleClick = () => {
     navigate(`/react-movies/${item.nameRu}`);
@@ -25,6 +28,17 @@ export const CartItem = ({ item }) => {
       return 'orange';
     } else {
       return 'red';
+    }
+  };
+
+  const getRating = (item) => {
+    if (item > 10) {
+      return (item / 10).toFixed(1);
+    } else if (item == null) {
+      // почему не работает при null === null
+      return 0;
+    } else {
+      return item;
     }
   };
 
@@ -50,7 +64,7 @@ export const CartItem = ({ item }) => {
           className={`movie__average movie__average--${getClassByRate(
             rating,
           )}`}>
-          {rating > 10 ? (rating / 10).toFixed(1) : rating}
+          {getRating(rating)}
         </div>
       </div>
     </div>

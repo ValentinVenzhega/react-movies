@@ -74,9 +74,14 @@
 }
 
 .movie__favorite {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #ffffff;
+  border-radius: 50%;
   position: absolute;
   top: 10px;
-  left: 5px;
+  left: 10px;
   z-index: 20;
   width: 32px;
   height: 32px;
@@ -84,6 +89,5 @@
 }
 
 .movie__favorite img {
-  width: 100%;
-  height: 100%;
+  width: 83%;
 }

@@ -6,6 +6,22 @@ import './Movie.css';
 export const Movie = () => {
   const cart = useSelector((state) => state.cart.cart);
 
+  const getGenres = (items) => {
+    const genres = items.map((genre) => {
+      return `${genre.genre}`;
+    });
+
+    return genres.join(', ');
+  };
+
+  const getCountries = (items) => {
+    const countries = items.map((genre) => {
+      return `${genre.country}`;
+    });
+
+    return countries.join(', ');
+  };
+
   return (
     <div className="movie-page">
       <div className="movie-page__left">
@@ -38,17 +54,13 @@ export const Movie = () => {
             <div className="movie-page__genre">
               <span>Жанр</span>:{' '}
               <span className="color1">
-                {cart.genres.map((genre) => {
-                  return ` ${genre.genre},`;
-                })}
+                {getGenres(cart.genres)}
               </span>
             </div>
             <div className="movie-page__country">
               <span>Страна</span>:{' '}
               <span className="color1">
-                {cart.countries.map((country) => {
-                  return ` ${country.country},`;
-                })}
+                {getCountries(cart.countries)}
               </span>
             </div>
           </div>
