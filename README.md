@@ -1,3 +1,3 @@
-# Movie search service
+# Сервис поиска фильмов
 
-You can see the project here https://valentinvenzhega.github.io/react-movies/
+Здесь можно посмотреть проект https://valentinvenzhega.github.io/react-movies/
