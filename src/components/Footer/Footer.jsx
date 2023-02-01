@@ -1,11 +1,11 @@
-import React from 'react';
+import React from "react";
 
-import './Footer.css';
+import styles from "./Footer.module.scss";
 
 export const Footer = () => {
-  return (
-    <div className="footer">
-      <div>© React Movies, 2022</div>
-    </div>
-  );
+    return (
+        <div className={styles.footer}>
+            <div>© React Movies, 2022</div>
+        </div>
+    );
 };

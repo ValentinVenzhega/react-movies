@@ -5,7 +5,7 @@ import { addMovies } from '../../redux/movies/movieSlice';
 
 import { SearchItem } from '../../components/SearchItem';
 
-import './Home.css';
+import styles from './Home.module.scss';
 
 export const Home = () => {
   const dispatch = useDispatch();
@@ -50,7 +50,7 @@ export const Home = () => {
   }, [page]);
 
   return (
-    <div className="home-page">
+    <div className={styles.page}>
       <SearchItem films={films} />
     </div>
   );

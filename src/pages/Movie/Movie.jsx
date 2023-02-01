@@ -1,80 +1,84 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
+import React from "react";
+import { useSelector } from "react-redux";
 
-import './Movie.css';
+import styles from "./Movie.module.scss";
 
 export const Movie = () => {
-  const cart = useSelector((state) => state.cart.cart);
+    const cart = useSelector((state) => state.cart.cart);
 
-  const getGenres = (items) => {
-    const genres = items.map((genre) => {
-      return `${genre.genre}`;
-    });
+    const getGenres = (items) => {
+        const genres = items.map((genre) => {
+            return `${genre.genre}`;
+        });
 
-    return genres.join(', ');
-  };
+        return genres.join(", ");
+    };
 
-  const getCountries = (items) => {
-    const countries = items.map((genre) => {
-      return `${genre.country}`;
-    });
+    const getCountries = (items) => {
+        const countries = items.map((genre) => {
+            return `${genre.country}`;
+        });
 
-    return countries.join(', ');
-  };
+        return countries.join(", ");
+    };
 
-  return (
-    <div className="movie-page">
-      <div className="movie-page__left">
-        <div className="movie-page__title">
-          {cart.nameRu}
+    return (
+        <div className={styles.page}>
+            <div className={styles.left}>
+                <div className={styles.title}>{cart.nameRu}</div>
+                <div className={styles.left__block}>
+                    <div
+                        className={`${styles.cover__inner} ${styles.image__left}`}
+                    >
+                        <img
+                            src={cart.posterUrl}
+                            alt={cart.nameRu}
+                            className={styles.cover}
+                        />
+                    </div>
+                    <div className={styles.content}>
+                        <div className={styles.length}>
+                            <span className={styles.color}>Рейтинг</span>:{" "}
+                            <span className={styles.color__text}>
+                                {cart.rating}
+                            </span>
+                        </div>
+                        <div className={styles.length}>
+                            <span>Продолжительность</span>:{" "}
+                            <span className={styles.color__text}>
+                                {cart.filmLength}
+                            </span>
+                        </div>
+                        <div className={styles.year}>
+                            <span>Год</span>:{" "}
+                            <span className={styles.color__text}>
+                                {cart.year}
+                            </span>
+                        </div>
+                        <div className={styles.genre}>
+                            <span>Жанр</span>:{" "}
+                            <span className={styles.color__text}>
+                                {getGenres(cart.genres)}
+                            </span>
+                        </div>
+                        <div className={styles.country}>
+                            <span>Страна</span>:{" "}
+                            <span className={styles.color__text}>
+                                {getCountries(cart.countries)}
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div className={styles.right}>
+                <div className={styles.cover__inner}>
+                    <img
+                        src={cart.posterUrl}
+                        alt={cart.nameRu}
+                        className={styles.cover}
+                    />
+                </div>
+            </div>
         </div>
-        <div className="movie-page__left-block">
-          <div className="movie__cover-inner movie__image-left">
-            <img
-              src={cart.posterUrl}
-              alt={cart.nameRu}
-              className="movie__cover"
-            />
-          </div>
-          <div className="movie-page__content">
-            <div className="movie-page__length">
-              <span className="color">Рейтинг</span>:{' '}
-              <span className="color1">{cart.rating}</span>
-            </div>
-            <div className="movie-page__length">
-              <span>Продолжительность</span>:{' '}
-              <span className="color1">
-                {cart.filmLength}
-              </span>
-            </div>
-            <div className="movie-page__year">
-              <span>Год</span>:{' '}
-              <span className="color1">{cart.year}</span>
-            </div>
-            <div className="movie-page__genre">
-              <span>Жанр</span>:{' '}
-              <span className="color1">
-                {getGenres(cart.genres)}
-              </span>
-            </div>
-            <div className="movie-page__country">
-              <span>Страна</span>:{' '}
-              <span className="color1">
-                {getCountries(cart.countries)}
-              </span>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className="movie-page__right">
-        <div className="movie__cover-inner">
-          <img
-            src={cart.posterUrl}
-            alt={cart.nameRu}
-            className="movie__cover"
-          />
-        </div>
-      </div>
-    </div>
-  );
+    );
 };
